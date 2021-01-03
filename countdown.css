@@ -1,0 +1,80 @@
+
+*{
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
+  background-color: rgb(158, 116, 0);
+}
+.button {
+  color: #fff;
+  font-size: 12px;
+  text-shadow: none;
+  height: 30px;
+  border-style: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.minSetButton {
+  color: #fff;
+  background-color: rgb(102, 75, 0);
+  font-size: 12px;
+  text-shadow: none;
+  display: inline-block;
+  width: 103px;
+  height: 30px;
+  margin-right: 5.5px;
+  border-style: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+#body {
+  margin-top: 320px;
+}
+
+#fiveMin {
+  margin-right: 0;
+}
+#milsec {
+  font-size: 20px;
+}
+#start {
+  background-color: rgb(102, 75, 0);
+  width: 320px;
+}
+
+#startShort {
+  background-color: rgb(102, 75, 0);
+  width: 208px;
+  margin-right: 4px;
+}
+#settingArea {
+  margin: 0 auto;
+  width: 320px;
+}
+#pause {
+  background-color: rgb(102, 75, 0);
+  width: 208px;
+  margin-right: 4px;
+}
+#reset {
+  background-color:  rgb(102, 75, 0);
+  width: 108px;
+}
+
+#timeArea {
+  font-size: 81px;
+  margin: 0 auto;
+  width: 320px;;
+}
+
+#alarmStop {
+  background-color:  rgb(102, 75, 0);
+  width: 208px;
+  margin-right: 4px;
+}
+
+i {
+  font-weight: normal;
+  background-color: rgb(102, 75, 0);
+  text-shadow: none;
+  vertical-align:text-bottom;
+}
