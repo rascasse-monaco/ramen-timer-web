@@ -62,7 +62,7 @@ function start() {
         //ゼロになったら止める
         if (countNum === 0) {
         removeAllChildren('settingArea');
-        createBtn('settingArea', 'alarmStop', '<i class="fas fa-volume-mute fa-lg"></i> Sound Stop');
+        createBtn('settingArea', 'alarmStop', '<i class="fas fa-volume-mute fa-lg"></i> Alarm Stop (<i class="fas fa-redo"></i> Reset)');
         buttonEventListener('alarmStop', 'click', mute);        
         alarm();//アラーム音
         stopTimer();
