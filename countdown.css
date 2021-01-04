@@ -61,15 +61,18 @@
 }
 
 #timeArea {
-  font-size: 160px;
   margin: 0 auto;
-  padding-top: 2px;
   width: 640px;
+}
+#num {
+  text-align: center;
+  font-size: 147px;/* font-sizeをこれ以上大きくすると、クロームで上にスジが出るバグが発生する。 */
+  padding-top: 5px;
 }
 
 #alarmStop {
   background-color:  rgb(102, 75, 0);
-  width: 417.5px;
+  width: 640px;
   margin-right: 12.5px;
 }
 
