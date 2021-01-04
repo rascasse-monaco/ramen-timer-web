@@ -2,7 +2,7 @@
 *{
   font-family: 'Press Start 2P', cursive;
   color: #fff;
-  background-color: rgb(158, 116, 0);
+  background-color: rgb(173, 127, 0);
 }
 .button {
   color: #fff;
@@ -10,7 +10,7 @@
   text-shadow: none;
   height: 60px;
   border-style: none;
-  border-radius: 3px;
+  border-radius: 6px;
   cursor: pointer;
 }
 .minSetButton {
@@ -23,7 +23,7 @@
   height: 60px;
   margin-right: 12.5px;
   border-style: none;
-  border-radius: 3px;
+  border-radius: 6px;
   cursor: pointer;
 }
 #body {
@@ -49,6 +49,27 @@
 #settingArea {
   margin: 0 auto;
   width: 640px;
+}
+#progressArea {
+  margin: 0 auto;
+  width: 640px;
+}
+#progressBar {
+  width: 640px;
+  height: 20px;
+  margin: 0px auto 10px auto;
+  display: inline-block;
+}
+progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+}
+::-webkit-progress-bar {
+  background-color: white;
+}
+::-webkit-progress-value {
+  background-color:  rgb(90, 89, 1);
 }
 #pause {
   background-color: rgb(102, 75, 0);

@@ -32,20 +32,35 @@ function getFiveBtn() {
   countNum = culcToSecond(0, five, 0);
   setTimer();
 }
+
+
 //カウントダウン実行関数
 function start() {
+    const progressMaxValue = countNum;//プログレスバー計算用最大値
     removeAllChildren('settingArea');
     replaceSetButton();
     buttonEventListener('pause', 'click', pause);
     buttonEventListener('reset', 'click', reload);
     interVal = setInterval(() => {
       countNum --;
+        //プログレスバーの表示
+        let progressNowValue = countNum;
+        let progressValuePercentage = (Math.floor((1 - progressNowValue / progressMaxValue) * 100)) + '';
+        removeAllChildren('progressArea');
+        const progressArea = document.getElementById('progressArea');
+        const progress = document.createElement('progress');
+              progress.setAttribute('id', 'progressBar');
+              progress.setAttribute('value', `${progressValuePercentage}`);
+              progress.setAttribute('max', '100');
+        progressArea.appendChild(progress);
+      //残り時間の表示
       document.getElementById('num').innerText =
       `${culcToTimeDisplay(countNum).min}:${toDoubleDigits  (culcToTimeDisplay(countNum).sec)}`;
+        //ゼロになったら止める
         if (countNum === 0) {
         removeAllChildren('settingArea');
         createBtn('settingArea', 'alarmStop', '<i class="fas fa-volume-mute fa-lg"></i> Sound Stop');
-        buttonEventListener('alarmStop', 'click', mute);
+        buttonEventListener('alarmStop', 'click', mute);        
         alarm();//アラーム音
         stopTimer();
       }
