@@ -4,6 +4,7 @@ import { removeAllChildren, createBtn, replaceSetButton, buttonEventListener  } 
 
 let countNum = 0;
 let interVal = null;// setInterval代入用
+let progressMaxValue = 0;//プログレスバー計算用最大値
 
 buttonEventListener('threeMin', 'click', getThreeBtn);
 buttonEventListener('fourMin', 'click',  getFourBtn);
@@ -21,22 +22,24 @@ function getThreeBtn() {
   const three = parseInt(document.getElementById('threeMin').value);
   countNum = culcToSecond(0, three, 0);
   setTimer();
+  progressMaxValue = countNum;
 }
 function getFourBtn() {
   const four = parseInt(document.getElementById('fourMin').value);
   countNum = culcToSecond(0, four, 0);
   setTimer();
+  progressMaxValue = countNum;
 }
 function getFiveBtn() {
   const five = parseInt(document.getElementById('fiveMin').value);
   countNum = culcToSecond(0, five, 0);
   setTimer();
+  progressMaxValue = countNum;
 }
 
 
 //カウントダウン実行関数
 function start() {
-    const progressMaxValue = countNum;//プログレスバー計算用最大値
     removeAllChildren('settingArea');
     replaceSetButton();
     buttonEventListener('pause', 'click', pause);
