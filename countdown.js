@@ -48,7 +48,7 @@ function start() {
       countNum --;
         //プログレスバーの表示
         let progressNowValue = countNum;
-        let progressValuePercentage = (Math.floor((1 - progressNowValue / progressMaxValue) * 100)) + '';
+        let progressValuePercentage = (Math.round((1 - progressNowValue / progressMaxValue) * 100)) + '';
         removeAllChildren('progressArea');
         const progressArea = document.getElementById('progressArea');
         const progress = document.createElement('progress');
@@ -56,6 +56,10 @@ function start() {
               progress.setAttribute('value', `${progressValuePercentage}`);
               progress.setAttribute('max', '100');
         progressArea.appendChild(progress);
+        const percentage = document.createElement('div');
+              percentage.setAttribute('id', 'percentage');
+              percentage.innerText = `${progressValuePercentage}%`;
+        progressArea.appendChild(percentage);
       //残り時間の表示
       document.getElementById('num').innerText =
       `${culcToTimeDisplay(countNum).min}:${toDoubleDigits  (culcToTimeDisplay(countNum).sec)}`;

@@ -36,6 +36,10 @@
 #milsec {
   font-size: 20px;
 }
+#percentage {
+  text-align: right;
+  margin-bottom: 10px;
+}
 #start {
   background-color: rgb(102, 75, 0);
   width: 640px;
