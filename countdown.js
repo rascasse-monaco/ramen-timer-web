@@ -9,41 +9,13 @@ const createChildElement = new CreateChildElement();
 let count = 0;
 let interVal = null;// setInterval代入用
 let progressMaxValue = 0;//プログレスバー計算用最大値
-// ボタンへイベントリスナー追加
-new Promise((resolve) => { // 3分ボタン
-  eventListener.getId('threeMin');
-  resolve();
-})
-.then(() => {
-  return new Promise((resolve) => {
-    eventListener.add('click', () => { getButtonValue('threeMin'); });
-    resolve();
-  });
-})
-.then(() => { // 4分ボタン
-  return new Promise((resolve) => {
-    eventListener.getId('fourMin');
-    resolve();
-  });
-})
-.then(() => {
-  return new Promise((resolve) => {
-    eventListener.add('click', () => { getButtonValue('fourMin'); });
-    resolve();
-  });
-})
-.then(() => { // 5分ボタン
-  return new Promise((resolve) => {
-    eventListener.getId('fiveMin');
-    resolve();
-  });
-})
-.then(() => {
-  return new Promise((resolve) => {
-    eventListener.add('click',  () => { getButtonValue('fiveMin'); });
-    resolve();
-  });
-});
+// 各分のボタンにイベントリスナー追加
+eventListener.getId('threeMin');
+eventListener.add('click', () => { getButtonValue('threeMin'); });
+eventListener.getId('fourMin');
+eventListener.add('click', () => { getButtonValue('fourMin'); });
+eventListener.getId('fiveMin');
+eventListener.add('click',  () => { getButtonValue('fiveMin'); });
 
 //ボタンのvalueを受け取ってセットする
 function getButtonValue(id) {
@@ -60,13 +32,14 @@ function getButtonValue(id) {
 //カウントダウン実行関数
 function start() {
     removeElement.removeAllChildren('settingArea');
+
     createChildElement.getParentElement('settingArea');
     createChildElement.create('button', 'button', 'pause', '<i class="fas fa-pause"></i> Pause');
-    createChildElement.getParentElement('settingArea');
-    createChildElement.create('button', 'button', 'reset', '<i class="fas fa-redo"></i> Reset');
-
     eventListener.getId('pause');
     eventListener.add('click', pause);
+
+    createChildElement.getParentElement('settingArea');
+    createChildElement.create('button', 'button', 'reset', '<i class="fas fa-redo"></i> Reset');
     eventListener.getId('reset');
     eventListener.add('click', reload)
 
