@@ -5,33 +5,20 @@
  * @param {Number} 秒、分、時など
  */
 function culcToSecond(hour, min, sec) {
-  const inputNum = {
+  const value = {
     sec: sec,
     min: min * 60,
     hour: hour * 60 * 60
   };
-  return (inputNum.sec + inputNum.min + inputNum.hour)
+  return (value.sec + value.min + value.hour)
 }
+
 //秒を時、分、秒の表記に変換
-function culcToTimeDisplay(Num) {
+function culcToTime(count) {
   return {
-    hour: Math.floor(Num / 60 / 60),
-    min: Math.floor((Num / 60) % 60),
-    sec: Num % 60
-  }
-}
-/**
- * 10の位に0を挿入して数字の桁数を合わせる
- * @return {String} 0を足した文字列
- * @param {Number} num 秒、分など
- */
-function toDoubleDigits(num){
-  num += '';
-  if (num.length === 1) {
-    return num = `0${num}`;
-  } else {
-    return num;
+    min: Math.floor((count / 60) % 60),
+    sec: (count % 60).toString().padStart(2, '0')
   }
 }
 
-export { culcToSecond, culcToTimeDisplay, toDoubleDigits };
+export { culcToSecond, culcToTime };
